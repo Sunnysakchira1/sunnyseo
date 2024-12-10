@@ -1,0 +1,30 @@
+---
+const navItems = [
+  { label: 'Home', href: '#home' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Stats', href: '#stats' },
+];
+---
+
+<header class="fixed w-full bg-white/90 backdrop-blur-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <div class="text-2xl font-bold text-primary">Sakchira</div>
+      <nav class="hidden md:flex space-x-8">
+        {navItems.map(item => (
+          <a 
+            href={item.href} 
+            class="text-gray-700 hover:text-primary transition-colors cursor-pointer"
+            onclick="document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' })"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+      <a href="https://j7uz8092jgp.typeform.com/to/BiUZgtmo" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors">
+        Get Your Audit
+      </a>
+    </div>
+  </div>
+</header>

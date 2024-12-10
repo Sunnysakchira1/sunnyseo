@@ -1,0 +1,45 @@
+---
+interface Props {
+  company: string;
+  title: string;
+  description: string;
+  results: string[];
+  services: string[];
+  image: string;
+}
+
+const { company, title, description, results, services, image } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+  <div class="aspect-video bg-gray-100 relative overflow-hidden">
+    <img src={image} alt={`${company} case study`} class="w-full h-full object-cover" />
+  </div>
+  <div class="p-8">
+    <div class="text-sm text-primary font-semibold mb-2">{company}</div>
+    <h3 class="text-2xl font-bold mb-4">{title}</h3>
+    <p class="text-gray-600 mb-6">{description}</p>
+    
+    <div class="mb-6">
+      <h4 class="font-semibold mb-3">Key Results:</h4>
+      <ul class="space-y-2">
+        {results.map(result => (
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+            </svg>
+            <span>{result}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      {services.map(service => (
+        <span class="px-3 py-1 bg-secondary text-primary rounded-full text-sm">
+          {service}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>

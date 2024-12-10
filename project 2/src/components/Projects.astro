@@ -1,0 +1,52 @@
+---
+const projects = [
+  {
+    title: "E-commerce Revenue Growth",
+    description: "Increased online sales through strategic SEO optimization and conversion rate optimization for a major retail client.",
+    metrics: ["500% Organic Traffic Increase", "391% Organic Lead Growth", "50+ Terms Ranking #1", "5x ROI"],
+    category: "E-commerce",
+    link: "https://sakchira.carrd.co/#ibrokers"
+  },
+  {
+    title: "SaaS Lead Generation",
+    description: "Implemented comprehensive content strategy and marketing automation for Happily, resulting in exceptional growth in qualified leads.",
+    metrics: ["250% More Leads", "45% Lower CAC", "98% Client Satisfaction"],
+    category: "SaaS",
+    link: "https://sakchira.carrd.co/#happily"
+  },
+  {
+    title: "Local Business Expansion",
+    description: "Helped Adira Finance expand to multiple locations through targeted local SEO and comprehensive digital transformation.",
+    metrics: ["5 New Locations", "400% Local Traffic", "2x Revenue"],
+    category: "Local Business",
+    link: "https://sakchira.carrd.co/#adira"
+  }
+];
+---
+
+<section class="py-20 bg-white" id="projects">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <a href={project.link} class="block">
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+            <div class="text-sm text-primary font-semibold mb-4">{project.category}</div>
+            <h3 class="text-2xl font-bold mb-4">{project.title}</h3>
+            <p class="text-gray-600 mb-6">{project.description}</p>
+            <div class="space-y-2">
+              {project.metrics.map(metric => (
+                <div class="flex items-center">
+                  <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                  </svg>
+                  <span class="font-semibold">{metric}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+---
+const posts = [
+  {
+    title: 'The Future of SEO in 2024',
+    excerpt: 'Discover the latest trends and strategies that will shape SEO success in the coming year.',
+    date: 'Mar 15, 2024',
+    readTime: '5 min read'
+  },
+  {
+    title: 'Maximizing ROI with Content Marketing',
+    excerpt: 'Learn how to create content that drives conversions and delivers measurable results.',
+    date: 'Mar 10, 2024',
+    readTime: '4 min read'
+  },
+  {
+    title: 'Local SEO Success Stories',
+    excerpt: 'Real-world examples of businesses that dominated their local markets through SEO.',
+    date: 'Mar 5, 2024',
+    readTime: '6 min read'
+  }
+];
+---
+
+<section class="py-20 bg-secondary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-4xl font-bold mb-4">Latest Insights</h2>
+      <p class="text-xl text-gray-600">
+        Expert tips and strategies to help you stay ahead in digital marketing
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {posts.map(post => (
+        <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div class="p-8">
+            <div class="flex items-center text-sm text-gray-500 mb-4">
+              <span>{post.date}</span>
+              <span class="mx-2">•</span>
+              <span>{post.readTime}</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4">{post.title}</h3>
+            <p class="text-gray-600 mb-6">{post.excerpt}</p>
+            <a href="#" class="text-primary font-semibold hover:text-primary/80 transition-colors">
+              Read More →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
